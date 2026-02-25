@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Harbour — Reference Vocabulary and Registry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void: #06080c;
+      --deep: #0b0e14;
+      --hull: #111520;
+      --panel: #161b28;
+      --rule: #1e2538;
+      --rule-glow: #2a3550;
+      --text: #b8c4d8;
+      --text-dim: #6b7a94;
+      --text-bright: #dce4f0;
+      --cyan: #4ad8c7;
+      --cyan-dim: #2a8a7e;
+      --cyan-glow: rgba(74, 216, 199, 0.08);
+      --amber: #d4a853;
+      --amber-dim: #8a6e35;
+      --red-dim: #6b3040;
+      --mono: 'IBM Plex Mono', 'Consolas', monospace;
+      --serif: 'Source Serif 4', 'Georgia', serif;
+      --max-w: 760px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      font-size: 16.5px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--serif);
+      color: var(--text);
+      background: var(--void);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* ── Grid overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--rule) 1px, transparent 1px),
+        linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Scanline ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(6, 8, 12, 0.03) 2px,
+        rgba(6, 8, 12, 0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── Header bar ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--deep);
+      border-bottom: 1px solid var(--rule);
+      backdrop-filter: blur(12px);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan-dim), transparent);
+      opacity: 0.5;
+    }
+
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .header-id {
+      color: var(--cyan);
+    }
+
+    .header-meta {
+      color: var(--text-dim);
+    }
+
+    /* ── Main ── */
+    main {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3.5rem 2rem 6rem;
+    }
+
+    /* ── Title block ── */
+    .title-block {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .title-block::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 120px;
+      height: 1px;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan-dim);
+    }
+
+    h1 {
+      font-family: var(--mono);
+      font-size: 1.6rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: var(--text-bright);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .version-line {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Scope box ── */
+    .scope-box {
+      background: var(--hull);
+      border: 1px solid var(--rule);
+      border-left: 2px solid var(--cyan-dim);
+      padding: 1.3rem 1.5rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .scope-box ol {
+      margin: 0.6rem 0 0.8rem 1.4rem;
+      color: var(--text);
+    }
+
+    .scope-box li {
+      margin-bottom: 0.2rem;
+    }
+
+    .scope-box strong {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .authority-line {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--rule);
+      letter-spacing: 0.02em;
+      line-height: 1.6;
+    }
+
+    .authority-line em {
+      color: var(--cyan-dim);
+      font-style: normal;
+    }
+
+    /* ── Section headers ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-top: 3.5rem;
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .section-label::before {
+      content: '▸';
+      margin-right: 0.5rem;
+      color: var(--cyan-dim);
+    }
+
+    /* ── Entry blocks ── */
+    .entry {
+      margin-bottom: 2.5rem;
+      padding-left: 1rem;
+      border-left: 1px solid var(--rule);
+      position: relative;
+    }
+
+    .entry::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: 0;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--cyan-dim);
+      box-shadow: 0 0 6px rgba(74, 216, 199, 0.3);
+    }
+
+    .entry-id {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 0.15rem;
+    }
+
+    .entry h3 {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-bright);
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.03em;
+    }
+
+    .entry p {
+      margin-bottom: 0.8rem;
+      font-size: 0.93rem;
+    }
+
+    .entry ul {
+      margin: 0.5rem 0 0.8rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .entry li {
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .entry li::marker {
+      color: var(--rule-glow);
+    }
+
+    /* ── Key phrase / axiom ── */
+    .axiom {
+      font-family: var(--mono);
+      font-size: 0.88rem;
+      color: var(--cyan);
+      letter-spacing: 0.02em;
+      margin: 0.8rem 0;
+      padding: 0.5rem 0;
+      text-shadow: 0 0 20px rgba(74, 216, 199, 0.15);
+    }
+
+    /* ── Characteristics list ── */
+    .char-list {
+      list-style: none;
+      margin: 0.5rem 0 0.8rem 0;
+      padding: 0;
+    }
+
+    .char-list li {
+      font-size: 0.88rem;
+      padding: 0.2rem 0 0.2rem 1.2rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    .char-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--rule-glow);
+    }
+
+    /* ── Negative definition (does not) ── */
+    .negation {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      font-style: italic;
+      padding-left: 1.2rem;
+      border-left: 1px solid var(--rule);
+      margin: 0.8rem 0;
+    }
+
+    /* ── Divider ── */
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--rule);
+      margin: 2.5rem 0;
+      position: relative;
+    }
+
+    hr::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 1px;
+      background: var(--cyan-dim);
+    }
+
+    /* ── Protocol section ── */
+    .protocol-req {
+      background: var(--hull);
+      border: 1px solid var(--rule);
+      padding: 1rem 1.3rem;
+      margin: 1rem 0;
+    }
+
+    .protocol-req ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .protocol-req li {
+      font-size: 0.88rem;
+      padding: 0.3rem 0 0.3rem 1.4rem;
+      position: relative;
+      color: var(--text);
+    }
+
+    .protocol-req li::before {
+      content: '▹';
+      position: absolute;
+      left: 0.2rem;
+      color: var(--cyan-dim);
+      font-size: 0.8rem;
+    }
+
+    .canonical-stamp {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--amber-dim);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ── Registry entries ── */
+    .registry-entry {
+      background: var(--hull);
+      border: 1px solid var(--rule);
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .registry-entry::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+    }
+
+    .registry-entry.instance::before { background: var(--cyan-dim); }
+    .registry-entry.view::before { background: var(--amber-dim); }
+    .registry-entry.demonstrator::before { background: var(--text-dim); }
+
+    .registry-type {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .registry-entry.instance .registry-type { color: var(--cyan); }
+    .registry-entry.view .registry-type { color: var(--amber); }
+    .registry-entry.demonstrator .registry-type { color: var(--text-dim); }
+
+    .registry-entry h4 {
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--text-bright);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .registry-entry p {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .registry-entry a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      color: var(--text-dim);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .registry-entry.instance a:hover { color: var(--cyan); border-color: var(--cyan-dim); }
+    .registry-entry.view a:hover { color: var(--amber); border-color: var(--amber-dim); }
+    .registry-entry.demonstrator a:hover { color: var(--text-bright); border-color: var(--text-dim); }
+
+    /* ── Editorial note ── */
+    .editorial-note {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .editorial-note p {
+      margin-bottom: 0.6rem;
+    }
+
+    .editorial-note .closing {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Footer ── */
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--rule-glow);
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      html { font-size: 15px; }
+      main { padding: 2.5rem 1.2rem 4rem; }
+      .header-inner { padding: 0.7rem 1.2rem; flex-direction: column; gap: 0.2rem; }
+      h1 { font-size: 1.3rem; }
+      .registry-entry { padding: 1rem 1.2rem; }
+    }
+
+    /* ── Subtle entrance animations ── */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .title-block { animation: fadeIn 0.8s ease-out; }
+    .scope-box { animation: fadeIn 0.8s ease-out 0.1s both; }
+    .entry { animation: fadeIn 0.6s ease-out both; }
+    .entry:nth-child(2) { animation-delay: 0.05s; }
+    .entry:nth-child(3) { animation-delay: 0.1s; }
+    .entry:nth-child(4) { animation-delay: 0.15s; }
+    .registry-entry { animation: fadeIn 0.6s ease-out both; }
+    .registry-entry:nth-child(2) { animation-delay: 0.08s; }
+    .registry-entry:nth-child(3) { animation-delay: 0.16s; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="header-id">The Harbour · Root</span>
+    <span class="header-meta">v0.2 pre-release · Oxford British English · Stewardship: U.W.</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── Title ── -->
+  <div class="title-block">
+    <h1>The Harbour</h1>
+    <div class="version-line">Reference Vocabulary and Registry</div>
+  </div>
+
+  <!-- ── Scope ── -->
+  <div class="scope-box">
+    <p>This site contains:</p>
+    <ol>
+      <li><strong>The Harbour Vocabulary</strong> — core structural definitions.</li>
+      <li><strong>The ADM-EC Protocol Reference</strong> — canonical description of the deliberation method.</li>
+      <li><strong>A Registry of Instances and Views</strong> — descriptive links only.</li>
+    </ol>
+    <p>It does not host essays, analyses, operational guidance, or project content.<br>
+    It is a reference node, not a platform.</p>
+    <div class="authority-line">
+      This vocabulary is maintained as an open reference.
+      It is not a standard and does not seek endorsement.<br>
+      <em>Use is welcome; authority flows from application, not affiliation.</em>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- I. VOCABULARY                           -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-label">I. Harbour Vocabulary</div>
+
+  <!-- 0. Harbour -->
+  <div class="entry">
+    <div class="entry-id">Definition 0</div>
+    <h3>Harbour</h3>
+    <p>The Harbour is a structural vocabulary for organising knowledge under conditions of uncertainty. It distinguishes invariant frameworks, interpretive overlays, and operational procedures without imposing metaphysical commitments.</p>
+    <p class="axiom">The Harbour deals in maps, not territory.</p>
+    <p>It defines how knowledge claims are structured, versioned, and related. It does not define what is ultimately real.</p>
+  </div>
+
+  <hr>
+
+  <!-- 1. Coastline -->
+  <div class="entry">
+    <div class="entry-id">Definition 1</div>
+    <h3>Coastline</h3>
+    <p>A Coastline is an invariant framework.</p>
+    <p>It defines a boundary condition, structural constraint, or falsifiable claim whose scope extends beyond a single project or instance.</p>
+    <ul class="char-list">
+      <li>Explicitly stated scope</li>
+      <li>Versioned and dated</li>
+      <li>Open to falsification or revision upon new evidence</li>
+      <li>Separated from interpretation and implementation</li>
+      <li>Accompanied by an Endorsement Marker</li>
+    </ul>
+    <p class="negation">A Coastline does not prescribe narrative meaning or operational procedure. It defines the structural boundary within which such interpretations and procedures may occur.</p>
+  </div>
+
+  <hr>
+
+  <!-- 1a. Endorsement Marker -->
+  <div class="entry">
+    <div class="entry-id">Definition 1a</div>
+    <h3>Endorsement Marker</h3>
+    <p>An Endorsement Marker declares the scope and standing of a Coastline.</p>
+    <p>It specifies whether the Coastline carries:</p>
+    <ul class="char-list">
+      <li>Broad community endorsement</li>
+      <li>Local stewardship by a named editor</li>
+      <li>Provisional status under review</li>
+    </ul>
+    <p>Every Coastline document must carry an Endorsement Marker.<br>
+    The Marker clarifies authority without asserting it.</p>
+  </div>
+
+  <hr>
+
+  <!-- 2. Sail -->
+  <div class="entry">
+    <div class="entry-id">Definition 2</div>
+    <h3>Sail (and Repair Kit)</h3>
+    <p>A Sail is an interpretive overlay.</p>
+    <p>It may include narrative, commentary, philosophical reflection, pedagogical exposition, or contextual analysis. Sails help readers navigate Coastlines and Handbooks but do not alter them.</p>
+    <p>A Repair Kit is a provisional interpretive adjustment applied when tension arises between observed reality and an existing Coastline. It does not modify the Coastline itself unless formal revision occurs.</p>
+    <p class="negation">Sails are plural, local, and replaceable. They carry no invariant authority.</p>
+  </div>
+
+  <hr>
+
+  <!-- 3. Handbook -->
+  <div class="entry">
+    <div class="entry-id">Definition 3</div>
+    <h3>Handbook</h3>
+    <p>A Handbook is an operational procedure.</p>
+    <p>It describes how something is implemented within a defined context — laboratory protocol, documentation structure, submission guidelines, teaching method, or organisational workflow.</p>
+    <ul class="char-list">
+      <li>Explicitly scoped</li>
+      <li>May depend on Coastlines</li>
+      <li>May reference Sails</li>
+      <li>Does not define invariant structure</li>
+    </ul>
+    <p class="negation">A Handbook belongs to an Instance.</p>
+  </div>
+
+  <hr>
+
+  <!-- 4. Lock and Key -->
+  <div class="entry">
+    <div class="entry-id">Definition 4</div>
+    <h3>Lock and Key</h3>
+    <p>The Lock–Key distinction clarifies epistemic role.</p>
+    <ul class="char-list">
+      <li>A <strong style="color:var(--text-bright)">Lock</strong> is a structural articulation — a Coastline or formal constraint.</li>
+      <li>A <strong style="color:var(--text-bright)">Key</strong> is an interrogation mode that unlocks or explores that structure.</li>
+    </ul>
+    <p>A View may act as a Key without being subordinate to the Lock.<br>
+    The distinction prevents conflation between structure and lived interrogation.</p>
+  </div>
+
+  <hr>
+
+  <!-- 5. Instance -->
+  <div class="entry">
+    <div class="entry-id">Definition 5</div>
+    <h3>Instance</h3>
+    <p>An Instance is a concrete instantiation of the Harbour structure within a defined domain (for example, a research group, project, or institutional context).</p>
+    <p>An Instance may host:</p>
+    <ul class="char-list">
+      <li>Handbooks</li>
+      <li>Sails</li>
+      <li>Locally stewarded Coastlines</li>
+    </ul>
+    <p class="negation">An Instance does not define the Harbour vocabulary.</p>
+  </div>
+
+  <hr>
+
+  <!-- 6. View -->
+  <div class="entry">
+    <div class="entry-id">Definition 6</div>
+    <h3>View</h3>
+    <p>A View is an interrogation mode applied to Harbour structures.</p>
+    <p>A View may emphasise:</p>
+    <ul class="char-list">
+      <li>Lived experience</li>
+      <li>Place-based analysis</li>
+      <li>Human systems interaction</li>
+      <li>Ethical reflection</li>
+    </ul>
+    <p class="negation">A View does not alter structural definitions. It explores them from a distinct perspective.</p>
+  </div>
+
+  <hr>
+
+  <!-- 7. Method Demonstrator -->
+  <div class="entry">
+    <div class="entry-id">Definition 7</div>
+    <h3>Method Demonstrator</h3>
+    <p>A Method Demonstrator is an independent application of a Harbour protocol (such as ADM-EC) outside Harbour hosting.</p>
+    <p class="negation">It may reference canonical definitions but remains operationally independent.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- II. ADM-EC PROTOCOL                     -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-label">II. ADM-EC Protocol Reference</div>
+
+  <p>ADM-EC is a deliberation protocol.<br>
+  It is orthogonal to content hierarchy and may be applied to Coastlines, Sails, Handbooks, Instances, or Views.</p>
+
+  <div style="margin: 1.5rem 0;">
+    <div class="entry" style="margin-bottom: 1.5rem;">
+      <div class="entry-id">ADM</div>
+      <ul class="char-list">
+        <li><strong style="color:var(--text-bright)">Analog</strong> — intuitive, physical, experiential reasoning</li>
+        <li><strong style="color:var(--text-bright)">Digital</strong> — formal, symbolic, algorithmic reasoning</li>
+        <li><strong style="color:var(--text-bright)">Memory</strong> — reference to prior work, precedent, and context</li>
+      </ul>
+    </div>
+    <div class="entry">
+      <div class="entry-id">EC</div>
+      <ul class="char-list">
+        <li><strong style="color:var(--text-bright)">Error-Correction</strong> — systematic identification of inconsistencies, boundary violations, and overreach</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:1.5rem; margin-bottom:0.5rem; font-size:0.9rem;">The protocol requires:</p>
+
+  <div class="protocol-req">
+    <ul>
+      <li>Consideration of all three lenses (Analog, Digital, Memory)</li>
+      <li>Explicit cross-checking between lenses</li>
+      <li>An Error-Correction gate</li>
+      <li>Minimal revision following identified inconsistencies</li>
+      <li>Re-validation after revision</li>
+    </ul>
+  </div>
+
+  <p style="font-size:0.9rem; margin-top:1rem;">The ordering of passes may adapt to context, but completeness of lenses and the Error-Correction gate is required.</p>
+
+  <p class="axiom">ADM-EC does not privilege one lens over another.</p>
+
+  <p style="font-size:0.9rem;">It is a symmetry-preserving method designed to prevent premature convergence and structural drift.</p>
+
+  <div class="canonical-stamp">This definition is canonical. Applications may vary in style but not in core requirements.</div>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!-- III. REGISTRY                            -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <div class="section-label">III. Registry of Instances and Views</div>
+
+  <p style="font-size:0.9rem; color:var(--text-dim); margin-bottom:1.5rem;">The following projects apply Harbour vocabulary or ADM-EC. This registry is descriptive, not affiliative.</p>
+
+  <div class="registry-entry instance">
+    <div class="registry-type">Harbour Instance</div>
+    <h4>Ions-in-Freiburg</h4>
+    <p>A research-group instance applying Harbour structure to experimental quantum physics, documentation architecture, and pedagogical material. Includes Handbooks, Sails, and locally stewarded Coastlines.</p>
+    <a href="https://uwarring.gitbook.io/ions-in-freiburg">uwarring.gitbook.io/ions-in-freiburg</a>
+  </div>
+
+  <div class="registry-entry view">
+    <div class="registry-type">Harbour View</div>
+    <h4>Open Society Docs</h4>
+    <p>A place-based and lived-experience interrogation of overlapping governance and social systems, operating as a View within Harbour vocabulary.</p>
+    <a href="https://harbour-views.github.io/root/index.html">harbour-views.github.io/root</a>
+  </div>
+
+  <div class="registry-entry demonstrator">
+    <div class="registry-type">Method Demonstrator</div>
+    <h4>T(h)reehouse + EC</h4>
+    <p>An independent demonstration of the ADM-EC deliberation protocol applied to complex, multi-perspective cases.</p>
+    <a href="https://threehouse-plus-ec.github.io/website/">threehouse-plus-ec.github.io/website</a>
+  </div>
+
+  <!-- ── Editorial note ── -->
+  <div class="editorial-note">
+    <p>This document contains definitions and a registry only.</p>
+    <p>It does not host essays, operational procedures, dossiers, or commentary.<br>
+    Changes to vocabulary are expected to be rare and versioned.</p>
+    <p class="closing">Authority derives from clarity of use, not institutional endorsement.</p>
+  </div>
+
+</main>
+
+<footer>
+  The Harbour · Reference Node · Maps, Not Territory
+</footer>
+
+</body>
+</html>
