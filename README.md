@@ -202,7 +202,7 @@ Link: [https://uwarring.gitbook.io/ions-in-freiburg](https://uwarring.gitbook.io
 **Open Society Docs**
 A place-based and lived-experience interrogation of overlapping governance and social systems, operating as a View within Harbour vocabulary.
 
-Link: [https://open-society.gitbook.io/open-society-docs](https://open-society.gitbook.io/open-society-docs)
+Link: [https://harbour-views.github.io/root/index.html](https://harbour-views.github.io/root/index.html)
 
 ---
 
