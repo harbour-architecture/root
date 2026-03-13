@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "title": "Harbour Registry",
+    "version": "0.3",
+    "date": "2026-03-13",
+    "stewardship": "U.W.",
+    "note": "This registry lists publicly accessible content that applies or references Harbour vocabulary. Inclusion is descriptive, not evaluative. Omission reflects incomplete cataloguing, not exclusion."
+  },
+  "status_definitions": {
+    "draft": "Early work, structure may change substantially.",
+    "candidate": "Ready for discussion, structurally stable but not yet validated.",
+    "stable": "Maintained and in active use.",
+    "hold": "Structurally stable but awaiting resolution of open flags or discriminant conditions.",
+    "archived": "Historical record, no longer actively maintained."
+  },
+  "entries": [
+    {
+      "name": "Ions-in-Freiburg",
+      "layer": "Instance",
+      "kind": "research-group",
+      "domain": "Experimental quantum physics, trapped ions",
+      "description": "Research-group instance applying Harbour structure to experimental quantum physics, documentation architecture, and pedagogical material.",
+      "steward": "U. Warring / T. Schätz group",
+      "url": "https://uwarring.gitbook.io/ions-in-freiburg",
+      "status": "stable"
+    },
+    {
+      "name": "Open Society Docs",
+      "layer": "View",
+      "kind": "place-based-inquiry",
+      "domain": "Governance, social systems, lived experience",
+      "description": "Place-based and lived-experience interrogation of overlapping governance and social systems. Pilot dossier: Einern (bergisch-märkische Wasserscheide).",
+      "steward": "U. Warring",
+      "url": "https://harbour-views.github.io/root/",
+      "status": "draft"
+    },
+    {
+      "name": "T(h)reehouse +EC",
+      "layer": "Method Demonstrator",
+      "kind": "publication-initiative",
+      "domain": "Complex situation analysis, ADM-EC application",
+      "description": "Non-commercial publication initiative demonstrating the ADM-EC deliberation protocol applied to complex, multi-perspective cases. Includes case archive, teaching stories, and kids' corner.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/website/",
+      "status": "stable"
+    },
+    {
+      "name": "Generator Layers (GLHC)",
+      "layer": "Coastline + Breakwater",
+      "kind": "dossier",
+      "domain": "Archaeology, genomics, cultural heritage, trans-generational creative traditions",
+      "description": "Dual-layer dossier: falsifiable framework for assessing trans-generational creative transcendence (Coastline) plus site-by-site measurement ledger (Breakwater). Council-5 ADM-EC.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/GLHC/",
+      "status": "hold"
+    },
+    {
+      "name": "The Accidental Question",
+      "layer": "Sail",
+      "kind": "essay",
+      "domain": "Outreach, archaeology, cultural heritage",
+      "description": "Plain-language outreach essay introducing the Generator Layers framework through the story of a grammatical slip that became a research question.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/GLHC/outreach.html",
+      "status": "stable"
+    },
+    {
+      "name": "Undetected Modes — Concept Note",
+      "layer": "Sail",
+      "kind": "concept-note",
+      "domain": "Quantum optics, trapped ions, biomedical imaging",
+      "description": "Concept note proposing a trapped-ion analogue quantum simulator for studying open-system dynamics in quantum imaging with undetected photons (QIUP). Maps the formal SU(1,1) interferometer analogy. Open invitation to collaborate.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/undetected-modes/",
+      "status": "draft"
+    },
+    {
+      "name": "The Geometry of Agreement",
+      "layer": "Sail",
+      "kind": "community-narrative",
+      "domain": "Precision metrology, distributed systems, coordination",
+      "description": "Flagship narrative essay for the Causal Comparison Networks framework. Traces a single coordination geometry from Harrison's marine chronometers through railway time standardisation to modern trapped-ion clock networks. Introduces the causality bound, closure loops, heterogeneity requirement, and loud-failure mandate.",
+      "steward": "U. Warring",
+      "url": "https://uwarring.gitbook.io/ions-in-freiburg/essays/the-geometry-of-agreement",
+      "status": "stable"
+    },
+    {
+      "name": "The Bias I Carry",
+      "layer": "Sail",
+      "kind": "essay",
+      "domain": "Scientific culture, methodology, self-reflection",
+      "description": "Reflective essay on tribal bias in quantum physics communities. Examines how professional identity shapes which questions are taken seriously and which are dismissed.",
+      "steward": "U. Warring",
+      "url": "https://uwarring.gitbook.io/ions-in-freiburg/essays/l-the-bias-i-carry",
+      "status": "stable"
+    },
+    {
+      "name": "Consciousness in the Spotlight",
+      "layer": "Sail",
+      "kind": "essay",
+      "domain": "Philosophy of mind, claim analysis",
+      "description": "Essay examining consciousness-convergence claims through the Harbour lens. Companion piece to Breakwater ledger entry CL-2026-001 (consciousness-convergence → UNDERDETERMINED).",
+      "steward": "U. Warring",
+      "url": "https://uwarring.gitbook.io/ions-in-freiburg/essays/consciousness-in-the-spotlight",
+      "status": "stable"
+    },
+    {
+      "name": "Causal Clock Unification Framework (CCUF)",
+      "layer": "Coastline",
+      "kind": "framework",
+      "domain": "Precision metrology, causal geometry, timekeeping",
+      "description": "Unifies clocks by causal geometry of phase comparison rather than oscillator physics. Three-length separation (source, apparatus, comparison). Deposited on Zenodo.",
+      "steward": "U. Warring",
+      "url": "https://doi.org/10.5281/zenodo.17948436",
+      "status": "candidate"
+    },
+    {
+      "name": "IF-QTR",
+      "layer": "Coastline",
+      "kind": "framework",
+      "domain": "Quantum-traceable refractometry, metrology",
+      "description": "Invariant Framework for Quantum-Traceable Refractometry. Constitutional document defining structural boundaries for refractometric measurement chains.",
+      "steward": "U. Warring",
+      "url": null,
+      "url_note": "Not yet publicly hosted; constitutional v0.3.0.",
+      "status": "candidate"
+    },
+    {
+      "name": "Breakwater Claim Analysis Ledger — Introduction",
+      "layer": "Breakwater",
+      "kind": "specification",
+      "domain": "Claim evaluation methodology",
+      "description": "Canonical introduction to the Breakwater: Ledger Principle, three-value classification protocol (COMPATIBLE / UNDERDETERMINED / INCONSISTENT), safeguard stack, and audit trail requirements.",
+      "steward": "U. Warring",
+      "url": "https://uwarring.gitbook.io/ions-in-freiburg/brakewater/introducing-the-breakwater",
+      "status": "stable"
+    },
+    {
+      "name": "Breakwater Layer — A Meta-Algorithm",
+      "layer": "Breakwater",
+      "kind": "specification",
+      "domain": "Claim evaluation methodology",
+      "description": "Algorithmic specification of the Breakwater as a meta-algorithm: classification pipeline, schema, and operational logic for reproducible claim analysis.",
+      "steward": "U. Warring",
+      "url": "https://uwarring.gitbook.io/ions-in-freiburg/brakewater/breakwater-layer-a-meta-algorithm",
+      "status": "stable"
+    },
+    {
+      "name": "Dossier: Hasse et al.",
+      "layer": "Breakwater",
+      "kind": "dossier",
+      "domain": "Trapped-ion dynamics, super-resolution measurement",
+      "description": "Breakwater dossier evaluating the stroboscopic travelling-wave measurement scheme (Phys. Rev. A 109, 053105). Claim Analysis Ledger with 8 entries (3 compatible, 5 underdetermined). Includes framework, tutorial, and interactive numerics viewer.",
+      "steward": "U. Warring",
+      "url": "https://strobo-travels-deep.github.io/root/",
+      "status": "hold"
+    },
+    {
+      "name": "Dossier: Amazon Seasonal Discharge",
+      "layer": "Breakwater",
+      "kind": "dossier",
+      "domain": "Geophysical hydrology, seasonal discharge",
+      "description": "Breakwater dossier evaluating the claim that parts of the Amazon basin experience 'two annual flood waves.' Parameterised harmonic model with falsification steps. 5 ledger entries including ENSO-conditioned discriminants.",
+      "steward": "U. Warring",
+      "url": "https://amazon-breakwater.github.io/root/",
+      "status": "hold"
+    },
+    {
+      "name": "Ulrich Warring — Professional Page",
+      "layer": null,
+      "kind": "personal-page",
+      "domain": "Professional homepage",
+      "description": "Personal academic and professional page. Research interests, publications, teaching, and contact information.",
+      "steward": "U. Warring",
+      "url": "https://uwarring82.github.io/me",
+      "status": "stable"
+    },
+    {
+      "name": "Rocket Science",
+      "layer": null,
+      "kind": "research-platform",
+      "domain": "Reproducible research, open science",
+      "description": "Open-source reproducible research platform. Deployed on GitHub Pages.",
+      "steward": "U. Warring",
+      "url": "https://uwarring82.github.io/rocket-science/",
+      "status": "stable"
+    },
+    {
+      "name": "Quantum Relaxation Ordering",
+      "layer": null,
+      "kind": "research-programme",
+      "domain": "Open quantum systems, trapped ions",
+      "description": "Open research programme on the quantum Mpemba effect in trapped-ion systems. Dossier, falsifiable framework, tutorials, and Python/QuTiP numerics pipeline. Open to collaboration.",
+      "stewards": ["A. Colla", "U. Warring"],
+      "url": "https://deep-relaxation-ordering.github.io/q-root/",
+      "status": "draft"
+    },
+    {
+      "name": "BSM Capstone Pilot",
+      "layer": "Handbook",
+      "kind": "teaching-project",
+      "domain": "Physics education, beyond-Standard-Model physics",
+      "description": "\"One Propagator, Three Regimes\" — BSM Capstone pilot project for advanced physics students. GitHub Pages site with associated materials.",
+      "steward": "U. Warring",
+      "url": "https://uwarring82.github.io/bsm-capstone/",
+      "status": "draft"
+    },
+    {
+      "name": "Numerical Clock Networks",
+      "layer": "Handbook",
+      "kind": "teaching-project",
+      "domain": "Precision metrology, MSc laboratory",
+      "description": "MSc-level laboratory experiment on numerical simulation of optical clock networks. GitHub Pages site with experiment instructions and materials.",
+      "steward": "U. Warring",
+      "url": "https://uwarring82.github.io/numerical-clock-networks/",
+      "status": "draft"
+    }
+  ]
+}
