@@ -2,7 +2,7 @@
   "meta": {
     "title": "Harbour Registry",
     "version": "0.3",
-    "date": "2026-03-13",
+    "date": "2026-03-18",
     "stewardship": "U.W.",
     "note": "This registry lists publicly accessible content that applies or references Harbour vocabulary. Inclusion is descriptive, not evaluative. Omission reflects incomplete cataloguing, not exclusion."
   },
@@ -182,7 +182,7 @@
       "domain": "Reproducible research, open science",
       "description": "Open-source reproducible research platform. Deployed on GitHub Pages.",
       "steward": "U. Warring",
-      "url": "https://uwarring82.github.io/rocket-science/",
+      "url": "https://threehouse-plus-ec.github.io/open-research-platform/index.html",
       "status": "stable"
     },
     {
@@ -202,7 +202,7 @@
       "domain": "Physics education, beyond-Standard-Model physics",
       "description": "\"One Propagator, Three Regimes\" — BSM Capstone pilot project for advanced physics students. GitHub Pages site with associated materials.",
       "steward": "U. Warring",
-      "url": "https://uwarring82.github.io/bsm-capstone/",
+      "url": "https://uwarring82.github.io/advlab_bsm/",
       "status": "draft"
     },
     {
@@ -212,7 +212,17 @@
       "domain": "Precision metrology, MSc laboratory",
       "description": "MSc-level laboratory experiment on numerical simulation of optical clock networks. GitHub Pages site with experiment instructions and materials.",
       "steward": "U. Warring",
-      "url": "https://uwarring82.github.io/numerical-clock-networks/",
+      "url": "https://adv-labs-ufr.github.io/numerical_clock_networks/",
+      "status": "draft"
+    },
+    {
+      "name": "What Is a Clock? — Open Science School",
+      "layer": "Handbook",
+      "kind": "teaching-programme",
+      "domain": "Precision metrology, physics of measurement, timekeeping",
+      "description": "Four-tier open teaching programme on the physics of timekeeping, from shadow sticks to pulsar residuals. Treats clocks as operational comparisons, not oscillators. Grounded in the CCUF causal-geometry framework. Open-access, no prerequisites.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/clock-school/",
       "status": "draft"
     }
   ]

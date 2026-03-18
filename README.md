@@ -1,6 +1,6 @@
 # The Harbour — Reference Vocabulary and Registry
 
-**Version 0.2 (Pre-Release)** · Oxford British English · Editorial Stewardship: U.W.
+**Version 0.3 (Pre-Release)** · Oxford British English · Editorial Stewardship: U.W.
 
 ---
 
@@ -176,6 +176,48 @@ It is a symmetry-preserving method designed to prevent premature convergence and
 
 This definition is canonical.
 Applications may vary in style but not in core requirements.
+
+### Council-3 ADM-EC
+
+Council-3 is the standard deliberative body for applying ADM-EC. It comprises three functional stances:
+
+- **Integrator** — orchestrates deliberation flow and synthesises perspectives.
+- **Guardian** — safeguards ethical integrity, clarity, and protective restraint.
+- **Architect** — ensures structural coherence, scalability, and systemic resilience.
+
+Stances are functional, not fixed identities. Any participant may adopt a stance by explicit invocation. Each stance carries a Core Function Veto scoped to its domain:
+
+- Integrator: Violation of Process
+- Guardian: Violation of Clarity or Ethics
+- Architect: Violation of Structure or Logic
+
+A single human supervisor convenes sessions, provides contextual inputs, and archives outputs but does not override council deliberations.
+
+### Deliberation Modes
+
+**Sequential flow** is the default for routine cases: each stance contributes in turn following ADM-EC, and the Integrator synthesises.
+
+**Chart-Transition Protocol** is the standard enhanced protocol for deliberations involving cross-stance conflict, invariant tension, or long-horizon consequences. It treats stances as overlapping coordinate charts on a shared manifold. Each transition between stances specifies:
+
+- The invariant preserved
+- The transformed representation
+- Information gained or lost
+
+Holonomy (the residual mismatch after a full circuit through all stances) is assessed on a tolerance scale:
+
+- Near-zero: proceed
+- Small: register as Productive Ambiguity
+- Large: classify as Divergent; further deliberation required
+
+EC functions as meta-operational holonomy detection — it identifies whether a full circuit of stances returns to coherence or reveals structural drift.
+
+### Atlas Integrity Principle
+
+No single stance covers the full deliberation space. The Integrator (acting as Harbourmaster) ensures best-effort atlas consistency under known limits. Path-dependence is acknowledged: the transition sequence must be recorded.
+
+### Resolution Clause
+
+If a Core Function Veto halts deliberation, the Integrator initiates a targeted re-deliberation round. If alignment cannot be reached, the issue is archived as Divergent without forced resolution.
 
 ---
 
