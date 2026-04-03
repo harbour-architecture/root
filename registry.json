@@ -2,7 +2,7 @@
   "meta": {
     "title": "Harbour Registry",
     "version": "0.3",
-    "date": "2026-03-18",
+    "date": "2026-04-03",
     "stewardship": "U.W.",
     "note": "This registry lists publicly accessible content that applies or references Harbour vocabulary. Inclusion is descriptive, not evaluative. Omission reflects incomplete cataloguing, not exclusion."
   },
@@ -224,6 +224,66 @@
       "steward": "U. Warring",
       "url": "https://threehouse-plus-ec.github.io/clock-school/",
       "status": "draft"
+    },
+    {
+      "name": "CRS Clock Targets — Feasibility Dossier",
+      "layer": "Breakwater",
+      "kind": "feasibility-dossier",
+      "domain": "Circular Rydberg atoms, atomic clocks, precision measurement",
+      "description": "Open feasibility study exploring whether circular Rydberg states can serve as a differential probe of ionic-core atomic-structure quantities relevant to strontium ion clocks. Target ranking, signal/noise model, falsifiable feasibility gates, and no-go criterion. Inspired by the Meinert group (Stuttgart).",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/crs-clocktargets/",
+      "status": "stable"
+    },
+    {
+      "name": "Near-Critical Sensing",
+      "layer": null,
+      "kind": "research-project",
+      "domain": "Epistemology of measurement, near-critical physics, quantum sensing",
+      "description": "Multi-document research project on sensing and measurement systems operating near regime boundaries. Historical dossier (Coastline), interpretive essay 'Amplifiers at the Boundary' (Sail), and quantum dossier on trapped-ion systems near structural, spectral, and dissipative boundaries (Coastline, in progress).",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/near-critical-sensing/",
+      "status": "draft"
+    },
+    {
+      "name": "ADM-EC Clock Consensus",
+      "layer": null,
+      "kind": "research-project",
+      "domain": "Precision metrology, clock networks, consensus algorithms",
+      "description": "Methods study testing whether distinguishing structured from unstructured anomalies in heterogeneous clock networks yields measurable improvement over established robust consensus methods. Three-way classification, delay-constrained corrections, explicit decision gates. WP1 (IC calibration) complete; WP2–4 pending.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/admec-clock-consensus/",
+      "status": "draft"
+    },
+    {
+      "name": "Frequency-Trajectory Control",
+      "layer": null,
+      "kind": "research-project",
+      "domain": "Optomechanics, laser control, resonant systems",
+      "description": "Research project investigating whether the direction and rate of laser frequency traversal constitutes a distinct control resource in optomechanical systems. Phase 1b (theoretical model) complete. Includes discriminant sheet, coastline, and sail documents.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/freq-trajectory-control/",
+      "status": "draft"
+    },
+    {
+      "name": "Single ²⁵Mg⁺ — Digital Twin",
+      "layer": null,
+      "kind": "digital-twin",
+      "domain": "Trapped ions, quantum physics, experimental control",
+      "description": "Living, version-controlled description of a single trapped ²⁵Mg⁺ ion — its Hamiltonian, open-system environment, and experimental parameter space. Maintained from three co-equal perspectives: experiment, theory, and numerics. Lab-internal infrastructure.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/single-25Mg-plus/",
+      "status": "draft"
+    },
+    {
+      "name": "T(h)reehouse +EC — Corporate Design Rules",
+      "layer": null,
+      "kind": "design-system",
+      "domain": "Visual identity, corporate design",
+      "description": "Corporate design blueprint and demonstrator for the T(h)reehouse +EC publication initiative. Token set, typography (Crimson Pro, IBM Plex Mono), emblem lockups, responsive table patterns, and accessible navigation components.",
+      "steward": "U. Warring",
+      "url": "https://threehouse-plus-ec.github.io/cd-rules/",
+      "status": "stable"
     }
   ]
 }
